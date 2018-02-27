@@ -24,19 +24,19 @@ class MDb {
 	 * @return array<MongoCollection>
 	 */
 	static function listCollections(MongoDB $db) {
-		$server = MServer::currentServer();
-		
-		$names = array();
-		$query = $db->execute("function (){ return db.getCollectionNames(); }", array());
-        if ($query["ok"]) {
-            $names= $query["retval"];
-        } 
-        else{
-            $colls = $db->listCollections(true);
-            foreach($colls as $coll){
-                $names[] = $coll->getName();
-            }               
-        }
+            $server = MServer::currentServer();
+
+            $names = array();
+            $query = $db->execute("function (){ return db.getCollectionNames(); }", array());
+            if ($query["ok"]) {
+                $names= $query["retval"];
+            } 
+            else{
+                $colls = $db->listCollections();
+                foreach($colls as $coll){
+                    $names[] = $coll->getName();
+                }               
+            }
 
 		$ret = array();
 		foreach ($names as $name) {

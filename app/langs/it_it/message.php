@@ -203,7 +203,7 @@ $message["about_content"] = '<strong class="big">RockMongo</strong> è uno strum
 ';
 
 /** Login **/
-$message["loginandrock"] = "Login and Rock";
+$message["loginandrock"] = "Login";
 $message["changeconfig"] = "Puoi cambiare la tua username e la password nel file config.php";
 $message["rockmongocredits"] = "Powered by RockMongo v" . (ROCK_MONGO_VERSION) . ", <a href=\"http://rockmongo.com/downloads\" target=\"_blank\">verifica nuove versione disponibili.</a>";
 

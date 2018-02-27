@@ -94,6 +94,7 @@ $(function () {
 </script>
 
 <div class="leftbar-page">
+        <img src="<?php render_theme_path() ?>/images/logo.png" style="width:100%"/>
 	<div class="server-btn"><img src="<?php render_theme_path() ?>/images/server.png" align="absmiddle" width="14"/> <a href="<?php h(url("server.index"));?>" target="right"><?php hm("server"); ?></a></div>
 	<div class="world-btn"><img src="<?php render_theme_path() ?>/images/world.png" align="absmiddle" width="14"/> <a href="<?php h(url("server.databases"));?>" target="right"><?php hm("overview"); ?></a></div>
 	<div class="line"></div>
