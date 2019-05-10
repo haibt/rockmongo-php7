@@ -17,7 +17,6 @@ currentFields.push("<?php h(addslashes($field));?>");
 <script language="javascript" src="js/jquery-ui-1.8.4.custom.min.js"></script>
 <link rel="stylesheet" href="<?php render_theme_path() ?>/css/collection.css" media="all"/>
 <link rel="stylesheet" href="<?php render_theme_path() ?>/css/jquery-ui-1.8.4.smoothness.css" media="all"/>
-
 <a name="page_top"></a>
 
 <!-- Navigation & Menu -->
@@ -30,7 +29,7 @@ currentFields.push("<?php h(addslashes($field));?>");
 
 <!-- Query box -->
 <div class="query">
-<form method="get" id="query_form">
+<form method="get" id="query_form" style="width:75%;float:left;">
 <input type="hidden" name="db" value="<?php h_escape($db);?>"/>
 <input type="hidden" name="collection" value="<?php h_escape($collection);?>"/>
 <input type="hidden" name="action" value="<?php h_escape(x("action"));?>"/>
@@ -113,6 +112,9 @@ currentFields.push("<?php h(addslashes($field));?>");
 <!-- end float divs -->
 
 </form>
+    <div style="width:25%;float:right;height:187px;text-align:center;">
+        <?php if(isset($cost)):?><span style="font-size:18pt">Query Takes:</span><br/><span style="font-size:35pt;"><?php h(round($cost, 6));?></span><br/><span style="font-size:18pt">seconds</span><?php endif;?>
+    </div>
 </div>
 
 <!-- Records in collection -->
@@ -129,7 +131,7 @@ currentFields.push("<?php h(addslashes($field));?>");
 		<!-- list all records -->
 		<?php foreach ($rows as $index => $row):?>
 		<div style="border:2px #ccc solid;margin-bottom:5px;" onmouseover="showOperationButtons('<?php h($index);?>')" onmouseout="hideOperationButtons('<?php h($index);?>')" class="record" <?php if(MCollection::isFile($row)): ?>r-is-file="yes" r-file-name="<?php h($row["filename"]) ?>"<?php endif; ?>>
-			<table width="100%" border="0" id="object_<?php h($index);?>">
+			<table width="100%" border="0" id="object_<?php h($index);?>" >
 				<tr>
 					<td valign="top" width="50">#<?php echo $page->total() - $page->offset() - $index; ?></td>
 					<td valign="top">

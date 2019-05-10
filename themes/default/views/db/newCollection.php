@@ -15,8 +15,14 @@ window.parent.frames["left"].location.reload();
 		<td width="100"><?php hm("name"); ?></td>
 		<td><input type="text" name="name" value="<?php h($name);?>" autofocus="autofocus"/></td>
 	</tr>
-	<tr>
-		<td colspan="2"><strong>Capped Collection Options</strong></td>
+        <tr>
+            <td colspan="2">
+                <strong>Capped Collection Options</strong><br>
+                Capped collections are <b>fixed-size</b> collections that support <b>high-throughput</b> operations that insert and retrieve documents based on insertion order. 
+                It guarantee preservation of the insertion order. As a result, queries <b>do not need an index</b> to return documents in insertion order. 
+                Without this indexing overhead, capped collections can support higher insertion throughput.  Capped collection <b>cannot be sharded</b>. 
+                Once a collection fills its allocated space, it makes room for new documents by <b>overwriting the oldest documents</b> in the collection.
+            </td>
 	</tr>
 	<tr bgcolor="#ffffff">
 		<td><?php hm("iscapped"); ?></td>

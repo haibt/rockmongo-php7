@@ -30,8 +30,9 @@ function r_show_more_options(btn) {
 }
 </script>
 
-<div style="padding:10px;margin:200px auto;width:300px;border:1px #ccc solid">
+<div style="padding:10px;margin:100px auto;width:300px;border:1px #ccc solid;text-align:center;">
 <?php if (isset($message)):?><p class="error"><?php h($message); ?></p><?php endif;?>
+<img src="themes/default/images/logo.png" style="width:200px;margin:auto;">
 	<form method="post">
 	<input type="hidden" name="more" id="show_more_options" value="<?php echo $moreOptions; ?>"/>
 	<table>
@@ -51,40 +52,10 @@ function r_show_more_options(btn) {
 			<td><input type="password" name="password" style="width:150px"/></td>
 		</tr>
 		<tr>
-			<td colspan="2" style="background:#eee"><strong>Non-Admin users:</strong></td>
-		</tr>
-		<tr>
-			<td valign="top">DB Name(s):</td>
-			<td><input type="text" name="db" style="width:150px" value="<?php h($db); ?>"/><br/></td>
-		</tr>
-		<tr>
-			<td colspan="2"><a href="#" onclick="return r_show_more_options(this)" id="more_options_btn">More &raquo;</a></td>
-		</tr>
-		<tbody style="display:none" id="more_options">
-		<tr>
-			<td><?php hm("language"); ?>:</td>
-			<td><select name="lang" style="width:150px">
-			<?php foreach ($languages as $code => $lang):?>
-			<option value="<?php h($code);?>" <?php if(x("lang") == $code || (x("lang") ==""&&__LANG__==$code)): ?>selected="selected"<?php endif;?> ><?php h($lang); ?></option>
-			<?php endforeach;?>
-			</select></td>
-		</tr>
-		<tr>
-			<td><?php hm("alive"); ?>:</td>
-			<td>
-			<select name="expire" style="width:150px">
-			<?php foreach ($expires as $long => $name):?>
-			<option value="<?php h($long);?>"><?php h($name);?></option>
-			<?php endforeach;?>
-			</select>
-			</td>
-		</tr>
-		</tbody>
-		<tr>
 			<td colspan="2" align="center"><input type="submit" value="<?php hm("loginandrock"); ?>"/></td>
 		</tr>
 	</table>
 	</form>
 	
-	<?php hm("rockmongocredits") ?>
+<div style="width:100%;text-align:center;padding-top:20px;"><?php hm("rockmongocredits") ?></div>
 </div>
